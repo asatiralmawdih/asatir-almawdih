@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <title>???? ?????</title>
+</head>
+<body>
+    <h1>???? ?????? ? ?????</h1>
+    <form id="orderForm">
+        <label for="size">??????:</label>
+        <select id="size" name="size">
+            <option value="S">????</option>
+            <option value="M">?????</option>
+            <option value="L">????</option>
+        </select>
+        <br>
+        <label for="color">?????:</label>
+        <select id="color" name="color">
+            <option value="red">????</option>
+            <option value="blue">????</option>
+            <option value="green">????</option>
+        </select>
+        <br>
+        <label for="address">???????:</label>
+        <input type="text" id="address" name="address" required>
+        <br>
+        <label for="phone">??? ??????:</label>
+        <input type="text" id="phone" name="phone" required>
+        <br>
+        <button type="submit">?????</button>
+    </form>
+
+    <script>
+        document.getElementById('orderForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            
+            const size = document.getElementById('size').value;
+            const color = document.getElementById('color').value;
+            const address = document.getElementById('address').value;
+            const phone = document.getElementById('phone').value;
+
+            const orderDetails = {
+                size: size,
+                color: color,
+                address: address,
+                phone: phone
+            };
+
+            // ??? ????? ????? ???????? ??? ????? ?? ????? ??????????
+            console.log('Order Details:', orderDetails);
+            alert('?? ????? ????? ?????!');
+
+            // ??? ???? ??????? ????? ????? ???????? ??? API
+            // fetch('YOUR_SERVER_ENDPOINT', {
+            //     method: 'POST',
+            //     headers: {
+            //         'Content-Type': 'application/json'
+            //     },
+            //     body: JSON.stringify(orderDetails)
+            // })
+            // .then(response => response.json())
+            // .then(data => {
+            //     console.log('Success:', data);
+            //     alert('?? ????? ????? ?????!');
+            // })
+            // .catch((error) => {
+            //     console.error('Error:', error);
+            // });
+        });
+    </script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <title>??????</title>
+</head>
+<body>
+    <h1>???? ????</h1>
+    <button onclick="window.location.href='order.html'">????</button>
+</body>
+</html>
